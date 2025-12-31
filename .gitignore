@@ -1,127 +1,124 @@
 # Visual Studio
 *.VC.db
 *.VC.VC.opendb
-*.sln
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 *.vcxproj.filters
 
-# Visual Studio Code
-.vscode/
-*.code-workspace
+# ---------------------------
+# .gitignore for FPSGameDemo (Unreal Engine)
+# Tailored for Windows + Visual Studio + common editors
+# Keep project/source files (.uproject, Source/, Content/, Config/) tracked.
+# Ignore build artifacts, user-specific files, IDE caches and OS temp files.
+# ---------------------------
 
-# Rider
-.idea/
-*.DotSettings
-*.userprefs
+# ---------------------------
+# IDE / Editor
+# ---------------------------
+.vs/                    # Visual Studio workspace cache
+*.suo
+*.user
+*.userosscache
+*.VC.db
+*.VC.VC.opendb
+*.sdf
+*.opensdf
+.vscode/                # VS Code workspace settings (usually user-specific)
+.idea/                  # Rider / IntelliJ
 
-# Unreal Engine
-# The binaries we build
+# Keep solution and project files in repo (do NOT ignore .sln/.vcxproj)
+# If you intentionally want to ignore certain generated project files, add them explicitly.
+
+# ---------------------------
+# Unreal Engine-specific
+# ---------------------------
+# Engine / build artifacts produced by Unreal
 Binaries/
-
-# Intermediate build results
-Intermediate/
-
-# Build folder
 Build/
-
-# Configuration files that might contain local paths
-[!Bb]inaries/*
-[!Ii]ntermediate/*
+Intermediate/
+DerivedDataCache/
 Saved/
 
-# User settings
-*.user
-*.sln.DotSettings
-*.sln.GhostDoc.xml
-*.DotSettings.user
-*.userprefs
+# Packaging / staging
+*.pak
+PackagedBuilds/
+Stage/
 
-# Configuration that may contain local paths
-Config/LocalBuilds/
-Config/Windows/
-Config/WindowsEditor/
-Config/ConsoleHistory.txt
+# Shader cache and generated global shader binaries
+GlobalShaderCache-*.bin
+
+# Asset registry and other generated asset files
+AssetRegistry.bin
+
+# Runtime-generated content (profiles, benchmarks, logs)
+Saved/Logs/
+Saved/Profiling/
+Saved/Benchmarking/
 
 # Crash reports
 Crashes/
 
-# Output logs
-*.log
-Saved/Logs/
-
-# Runtime generated content
-Saved/Config/Windows/
-Saved/Config/WindowsEditor/
-Saved/Profiling/
-Saved/Benchmarking/
-
-# Packaged game
-[!Bb]inaries/*
-[!Ii]ntermediate/*
-
-# Compiled source files for the editor
-*.dir
-*.scc
-*.map
-
-# Build artifacts
-*.dll
-*.exe
-*.pdb
-*.lib
-*.exp
-*.ilk
-*.iobj
-*.ipdb
-*.tlog
-*.lastbuildstate
-
-# Visual Studio 2019/2022
-*.VC.VC.opendb
-.vs/
-
-# Platform-specific files
-*.swp
-*~
-.DS_Store
-Thumbs.db
-
-# C++ specific
+# ---------------------------
+# Build / Compiler artifacts
+# ---------------------------
 *.obj
 *.o
 *.a
+*.lib
+*.dll
+*.exe
 *.so
 *.dylib
+*.pdb
+*.idb
+*.ipdb
+*.ilk
+*.exp
+*.iobj
+*.tlog
+*.lastbuildstate
 
-# Generated code
-*.generated.*
-*.gen.cpp
-*.gen.h
-*.gen.js
-*.gen.cs
-
-# Shader cache
-DerivedDataCache/
-GlobalShaderCache-*.bin
-
-# Profiling
-Profiling/
-
-# Asset registry
-AssetRegistry.bin
-
-# Packaging
-PackagedBuilds/
-Stage/
-
-# VRChat specific (if used)
-VRChat/
-vrctest.bat
-vrctest.sh
-
-# Temporary files
+# Temporary/backup files
 *.tmp
 *.temp
+*.swp
+*~
+
+# ---------------------------
+# Logs, caches, and OS files
+# ---------------------------
+*.log
+.DS_Store
+Thumbs.db
+
+# ---------------------------
+# Project & user config (local settings)
+# ---------------------------
+# Per-user Unreal project settings (do not commit)
+*.uproject.user
+
+# Local build/config overrides (if you have local-only config files, add here)
+Config/LocalBuilds/
+Config/Windows/
+Config/WindowsEditor/
+
+# Editor generated (do not commit)
+*.generated.*
+
+# ---------------------------
+# Optional: Visual Studio cache files
+# ---------------------------
+*.sln.docstates
+*.sln.DotSettings
+*.DotSettings.user
+
+# ---------------------------
+# Keep these files tracked (explicit negations if needed)
+# E.g., if you want to keep some files under Config or .vscode, add rules like:
+# !Config/DefaultEngine.ini
+# !.vscode/launch.json
+# ---------------------------
+
+# End of file
