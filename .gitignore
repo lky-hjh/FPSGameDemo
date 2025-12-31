@@ -1,0 +1,127 @@
+# Visual Studio
+*.VC.db
+*.VC.VC.opendb
+*.sln
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj.filters
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Rider
+.idea/
+*.DotSettings
+*.userprefs
+
+# Unreal Engine
+# The binaries we build
+Binaries/
+
+# Intermediate build results
+Intermediate/
+
+# Build folder
+Build/
+
+# Configuration files that might contain local paths
+[!Bb]inaries/*
+[!Ii]ntermediate/*
+Saved/
+
+# User settings
+*.user
+*.sln.DotSettings
+*.sln.GhostDoc.xml
+*.DotSettings.user
+*.userprefs
+
+# Configuration that may contain local paths
+Config/LocalBuilds/
+Config/Windows/
+Config/WindowsEditor/
+Config/ConsoleHistory.txt
+
+# Crash reports
+Crashes/
+
+# Output logs
+*.log
+Saved/Logs/
+
+# Runtime generated content
+Saved/Config/Windows/
+Saved/Config/WindowsEditor/
+Saved/Profiling/
+Saved/Benchmarking/
+
+# Packaged game
+[!Bb]inaries/*
+[!Ii]ntermediate/*
+
+# Compiled source files for the editor
+*.dir
+*.scc
+*.map
+
+# Build artifacts
+*.dll
+*.exe
+*.pdb
+*.lib
+*.exp
+*.ilk
+*.iobj
+*.ipdb
+*.tlog
+*.lastbuildstate
+
+# Visual Studio 2019/2022
+*.VC.VC.opendb
+.vs/
+
+# Platform-specific files
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# C++ specific
+*.obj
+*.o
+*.a
+*.so
+*.dylib
+
+# Generated code
+*.generated.*
+*.gen.cpp
+*.gen.h
+*.gen.js
+*.gen.cs
+
+# Shader cache
+DerivedDataCache/
+GlobalShaderCache-*.bin
+
+# Profiling
+Profiling/
+
+# Asset registry
+AssetRegistry.bin
+
+# Packaging
+PackagedBuilds/
+Stage/
+
+# VRChat specific (if used)
+VRChat/
+vrctest.bat
+vrctest.sh
+
+# Temporary files
+*.tmp
+*.temp
