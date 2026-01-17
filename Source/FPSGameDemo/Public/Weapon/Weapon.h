@@ -15,6 +15,9 @@ public:
 	// Sets default values for this actor's properties
 	AWeapon();
 
+	// fire
+	virtual void Fire();
+
 protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Compoents")
@@ -25,4 +28,12 @@ protected:
 	
 public:	
 	FORCEINLINE USkeletalMeshComponent* GetWeaponMesh() const { return WeaponMesh; }
+
+	// fire range
+	UPROPERTY(EditDefaultsOnly, Category = "Stats")
+	float MaxRange = 5000.f;
+
+	// fire damage
+	UPROPERTY(EditDefaultsOnly, Category = "Stats")
+	float Damage = 20.f;
 };

@@ -401,3 +401,36 @@ void AFPSGameCharacterBase::SpawnDefaultWeapon()
 		}
 	}
 }
+
+float AFPSGameCharacterBase::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
+{
+	// 1. 必须先调用父类的实现 (它会处理一些底层逻辑)
+	float ActualDamage = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
+
+	// 2. 如果已经死了，或者伤害为0，直接返回
+	if (CurrentHealth <= 0.0f || ActualDamage <= 0.0f)
+	{
+		return 0.0f;
+	}
+
+	// 3. 执行扣血逻辑
+	// FMath::Clamp 防止血量变成负数
+	CurrentHealth = FMath::Clamp(CurrentHealth - ActualDamage, 0.0f, MaxHealth);
+
+	UE_LOG(LogTemp, Warning, TEXT("%s took %f damage from %s. Health: %f"), 
+		*GetName(), 
+		ActualDamage, 
+		*GetNameSafe(DamageCauser), // 打印出是哪把枪打的
+		CurrentHealth
+	);
+
+	// 4. 死亡判定
+	if (CurrentHealth <= 0.0f)
+	{
+		// Die(); // 这里调用你的死亡函数
+		UE_LOG(LogTemp, Error, TEXT("Character Died!"));
+	}
+
+	// 5. 返回实际造成的伤害值
+	return ActualDamage;
+}
