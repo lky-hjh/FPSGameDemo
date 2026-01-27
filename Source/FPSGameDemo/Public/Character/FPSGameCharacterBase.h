@@ -46,6 +46,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
 	class UInputAction* CrouchAction;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+	class UInputAction* FireAction;
+	
 	// Movement properties
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
 	float WalkSpeed = 600.0f;
@@ -87,6 +90,7 @@ protected:
 	void JumpInput(const FInputActionValue& Value);
 	void SprintInput(const FInputActionValue& Value);
 	void CrouchInput(const FInputActionValue& Value);
+	void FireInput(const FInputActionValue& Value);
 
 	// Movement functions
 	UFUNCTION(BlueprintCallable, Category = "Movement")

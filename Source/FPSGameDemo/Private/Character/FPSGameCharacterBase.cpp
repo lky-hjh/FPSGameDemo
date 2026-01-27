@@ -84,6 +84,9 @@ void AFPSGameCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInp
 
 		// Crouching
 		EnhancedInputComponent->BindAction(CrouchAction, ETriggerEvent::Started, this, &AFPSGameCharacterBase::CrouchInput);
+
+		// Fire
+		EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Started, this, &AFPSGameCharacterBase::FireInput);
 	}
 	else
 	{
@@ -138,6 +141,14 @@ void AFPSGameCharacterBase::CrouchInput(const FInputActionValue& Value)
 	if (Value.Get<bool>())
 	{
 		ToggleCrouch();
+	}
+}
+
+void AFPSGameCharacterBase::FireInput(const FInputActionValue& Value)
+{
+	if (CurrentWeapon)
+	{
+		CurrentWeapon->Fire();
 	}
 }
 
