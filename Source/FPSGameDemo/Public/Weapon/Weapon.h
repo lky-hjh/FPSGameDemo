@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Character/FPSGameCharacterBase.h"
 #include "Weapon.generated.h"
 
 UCLASS()
@@ -16,6 +17,7 @@ public:
 	AWeapon();
 
 	// fire
+	UFUNCTION(BlueprintCallable, Category = "Combat")
 	virtual void Fire();
 
 protected:
@@ -25,15 +27,19 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Compoents")
 	class USceneComponent* Root;
+
+	UFUNCTION(BlueprintImplementableEvent, Category = "Combat")
+	void OnFireEffects(const FVector& HitLocation, bool bHitEnemy);
+
 	
 public:	
 	FORCEINLINE USkeletalMeshComponent* GetWeaponMesh() const { return WeaponMesh; }
 
 	// fire range
-	UPROPERTY(EditDefaultsOnly, Category = "Stats")
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly,  Category = "Stats")
 	float MaxRange = 5000.f;
 
 	// fire damage
-	UPROPERTY(EditDefaultsOnly, Category = "Stats")
-	float Damage = 20.f;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly,  Category = "Stats")
+	float Damage = 1.f;
 };

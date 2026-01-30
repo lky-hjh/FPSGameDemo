@@ -170,13 +170,13 @@ protected:
 
 	UFUNCTION(Server, Reliable, WithValidation)
 	void ServerSetHealth(float NewHealth);
-
+	
 	// Weapon system
 	// TSubclassOf restricts the selection to only subclasses of AWeapon.
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combat")
 	TSubclassOf<AWeapon> DefaultWeaponClass;
 	
-	UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = "Combat")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Compoents")
 	AWeapon* CurrentWeapon;
 
 	// Name of the hand attachment point

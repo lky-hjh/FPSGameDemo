@@ -146,10 +146,7 @@ void AFPSGameCharacterBase::CrouchInput(const FInputActionValue& Value)
 
 void AFPSGameCharacterBase::FireInput(const FInputActionValue& Value)
 {
-	if (CurrentWeapon)
-	{
-		CurrentWeapon->Fire();
-	}
+	
 }
 
 void AFPSGameCharacterBase::DoMove(float Right, float Forward)
@@ -412,6 +409,7 @@ void AFPSGameCharacterBase::SpawnDefaultWeapon()
 		}
 	}
 }
+
 
 float AFPSGameCharacterBase::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser)
 {

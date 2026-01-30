@@ -31,5 +31,8 @@
 			"Name": "GameplayStateTree",
 			"Enabled": true
 		}
+	],
+	"AdditionalPluginDirectories": [
+		"../UI/C_MP_Lobby-main/C_MP_Lobby-main/Plugins/Maple_FastSetting"
 	]
 }
